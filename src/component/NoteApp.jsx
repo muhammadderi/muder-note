@@ -1,55 +1,28 @@
 import React from 'react';
-import { getAllNotes } from "../utils/local-data";
-import NoteList from "./NoteList";
+// import { getAllNotes } from "../utils/local-data";
+// import NoteList from "./NoteList";
 import NoteInput from './NoteInput';
-
-class NoteApp extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            notes: getAllNotes(),
-        }
-        this.onDeleteHandler = this.onDeleteHandler.bind(this);
-        this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
-    }
-
-    onDeleteHandler(id) {
-        const notes = this.state.notes.filter(note => note.id !== id);
-        this.setState({notes});
-    }
-
-    onAddNoteHandler({title, body}) {
-        this.setState((prevState) => {
-            return {
-                notes: [
-                    ...prevState.notes,
-                    {
-                        id: +newDate(),
-                        body,
-                        createdAt,
-                    }
-                ]
-            }
-        })
-    }
+import Navigation from './Navigation';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import AddPage from '../pages/AddPage';
 
 
-    render(){
-        return (
-            <div className="app-container">
-            <header>
-            <h1>Note-App</h1>
-            </header>
-            <main>
-            <h2>Tambah Catatan</h2>
-            <NoteInput addNote={this.onAddNoteHandler} /> 
-            <h2>Daftar Catatan</h2>               
-            <NoteList notes={this.state.notes} onDelete={this.onDeleteHandler} />
-            </main>
-        </div>
-        )
-    }
+function NoteApp() {
+    return (
+        <div className="app-container">
+        <header>
+        <h1>Note-App</h1>
+        <Navigation />
+        </header>
+        <main>
+        <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/add' element={<AddPage />} />
+        </Routes>
+        </main>
+    </div>
+    )
 }
 
 export default NoteApp;

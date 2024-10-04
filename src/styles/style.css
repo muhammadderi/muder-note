@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
 :root {
   --primary: #BB86FC;
   --primary-variant: #3700B3;
   --secondary: #03DAC6;
-  --background: #121212;
+  --background: #FCFAEE;
   --surface: #121212;
   --error: #CF6679;
   --warning: #F39C12;
-  --on-background: #FFFFFF;
+  --on-background: #FFCFB3;
   --on-background-grey: #c7c7c7;
   --on-surface: #FFFFFF;
 }
@@ -23,6 +25,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'afacad-flux';
 }
 
 a {
@@ -35,7 +38,7 @@ body {
 }
 
 .app-container {
-  color: var(--on-background);
+  color: #000;
   background-color: var(--background);
   min-height: 100vh;
   transition: all ease-in-out 0.5s;
@@ -59,6 +62,10 @@ header .navigation ul li {
   margin: 0 8px;
 }
 
+h2 {
+  margin-top: 20px;
+}
+
 main {
   margin: 0 auto;
   padding: 32px 0;
@@ -67,7 +74,6 @@ main {
 }
 
 .notes-list {
-  margin-top: 15px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
@@ -88,6 +94,15 @@ main {
   border-radius: 8px;
   border: 1px solid var(--on-background);
   border-top: 5px solid;
+  background-color: #FFCFB3;
+  color: #000;
+}
+
+.note-item__delete::before {
+  content: "\A";
+      white-space: pre;
+      display: block;
+
 }
 
 .note-item__title {
@@ -95,7 +110,7 @@ main {
 }
 
 .note-item__createdAt {
-  color: var(--on-background-grey);
+  color: #000;
   font-size: 14px;
   margin: 4px 0;
 }
@@ -200,18 +215,19 @@ main {
 
 
 .submit-button {
-  background-color: #fff;
+  background-color: #FFCFB3;
   color: #000;
   padding: 15px;
   border-radius: 10px;
+  border: none;
   margin-top: 10px;
   margin-bottom: 20px;
   font-size: 15px;
 }
 
 .submit-button:active{
-  background-color: #000;
-  color: #fff;
+  background-color: #FCFAEE;
+  color: #000;
   padding: 15px;
   border-radius: 10px;
   margin-top: 10px;
@@ -222,7 +238,13 @@ main {
   color: #000
 }
 
-.search-bar input {
+.search-bar {
+  padding: 10px 5px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.search-bar input{
   margin: 16px 0;
   font-family: 'Inter', sans-serif;
   background-color: transparent;
