@@ -60,6 +60,8 @@ header .navigation ul li {
   display: inline-block;
   font-size: 24px;
   margin: 0 8px;
+  text-decoration: none;
+  color: black;
 }
 
 h2 {
@@ -98,12 +100,7 @@ main {
   color: #000;
 }
 
-.note-item__delete::before {
-  content: "\A";
-      white-space: pre;
-      display: block;
 
-}
 
 .note-item__title {
   margin: 4px 0;
@@ -236,6 +233,27 @@ main {
 [data-placeholder]:empty::before {
   content: attr(data-placeholder);
   color: #000
+}
+
+.note-item__delete {
+ background-color: transparent;
+ border: none;
+}
+
+.note-item__delete:hover {
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.note-mix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-navbar {
+  display: flex;
 }
 
 .search-bar {
