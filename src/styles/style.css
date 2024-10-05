@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
 
 :root {
-  --primary: #BB86FC;
-  --primary-variant: #3700B3;
-  --secondary: #03DAC6;
-  --background: #FCFAEE;
+  --primary: #bb86fc;
+  --primary-variant: #3700b3;
+  --secondary: #03dac6;
+  --background: #fcfaee;
   --surface: #121212;
-  --error: #CF6679;
-  --warning: #F39C12;
-  --on-background: #FFCFB3;
+  --error: #cf6679;
+  --warning: #f39c12;
+  --on-background: #ffcfb3;
   --on-background-grey: #c7c7c7;
-  --on-surface: #FFFFFF;
+  --on-surface: #ffffff;
 }
 
 [data-theme="light"] {
-  --background: #DDDDDD;
-  --suface: #FFFFFF;
+  --background: #dddddd;
+  --suface: #ffffff;
   --on-background: #333333;
   --on-background-grey: #6d6d6d;
   --on-surface: #333333;
@@ -25,16 +25,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'afacad-flux';
+  font-family: "afacad-flux";
 }
 
 a {
   color: var(--on-background);
 }
 
-
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .app-container {
@@ -50,6 +49,7 @@ header {
   justify-content: center;
   padding: 16px;
   border-bottom: 1px solid var(--on-background);
+  background-color: #ffcfb3;
 }
 
 header h1 {
@@ -62,6 +62,17 @@ header .navigation ul li {
   margin: 0 8px;
   text-decoration: none;
   color: black;
+}
+
+.icons-react {
+  color: #000;
+}
+
+.icons-react:hover {
+  border-radius: 50px;
+  border: 2px;
+  background-color: #000;
+  color: #fff;
 }
 
 h2 {
@@ -85,6 +96,7 @@ main {
 .notes-list-empty {
   margin-top: 32px;
   padding: 16px 8px;
+  text-align: center;
 }
 
 .notes-list-empty p {
@@ -96,11 +108,9 @@ main {
   border-radius: 8px;
   border: 1px solid var(--on-background);
   border-top: 5px solid;
-  background-color: #FFCFB3;
+  background-color: #ffcfb3;
   color: #000;
 }
-
-
 
 .note-item__title {
   margin: 4px 0;
@@ -122,12 +132,12 @@ main {
 }
 
 .delete-button {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .detail-page {
   margin: 0 auto;
-  margin-top: 32px; 
+  margin-top: 32px;
   width: 90%;
 }
 
@@ -138,7 +148,7 @@ main {
 }
 
 .detail-page__createdAt {
-  color: var(--on-background-grey)
+  color: var(--on-background-grey);
 }
 
 .detail-page__body {
@@ -147,7 +157,9 @@ main {
   font-size: 18px;
 }
 
-.detail-page__action, .homepage__action, .add-new-page__action {
+.detail-page__action,
+.homepage__action,
+.add-new-page__action {
   position: fixed;
   display: flex;
   gap: 16px;
@@ -177,9 +189,9 @@ main {
 .add-new-page__input .add-new-page__input__title {
   width: 100%;
   background-color: #fff;
-  border: 0;
+  border: 2px solid #000;
   color: #000;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 20px;
   padding: 8px 10px;
   height: 60px;
@@ -195,7 +207,7 @@ main {
   background-color: #fff;
   border: 0;
   color: #000;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 20px;
   padding: 8px 10px;
   min-height: 150px;
@@ -203,16 +215,18 @@ main {
   border-radius: 10px;
 }
 
+.note-input input {
+  border: 2px solid #000;
+}
+
 .add-new-page__input__body::placeholder {
   color: #000;
   margin: 0;
   padding: 0;
-  
 }
 
-
 .submit-button {
-  background-color: #FFCFB3;
+  background-color: #ffcfb3;
   color: #000;
   padding: 15px;
   border-radius: 10px;
@@ -222,8 +236,8 @@ main {
   font-size: 15px;
 }
 
-.submit-button:active{
-  background-color: #FCFAEE;
+.submit-button:active {
+  background-color: #fcfaee;
   color: #000;
   padding: 15px;
   border-radius: 10px;
@@ -232,16 +246,17 @@ main {
 
 [data-placeholder]:empty::before {
   content: attr(data-placeholder);
-  color: #000
+  color: #000;
 }
 
 .note-item__delete {
- background-color: transparent;
- border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .note-item__delete:hover {
-  background-color: #000;
+  margin: 0;
+  padding: 0;
   border-radius: 50%;
   color: #fff;
 }
@@ -262,9 +277,9 @@ main {
   width: 100%;
 }
 
-.search-bar input{
+.search-bar input {
   margin: 16px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: transparent;
   border: 1px solid var(--on-background);
   border-radius: 4px;
@@ -277,7 +292,12 @@ main {
   color: var(--on-background-grey);
 }
 
-.toggle-theme, .toggle-locale {
+.search-bar::placeholder {
+  font-size: 16px;
+}
+
+.toggle-theme,
+.toggle-locale {
   background-color: transparent;
   border: 0;
   cursor: pointer;
@@ -295,18 +315,21 @@ main {
   font-size: 28px;
 }
 
-.input-login, .input-register {
+.input-login,
+.input-register {
   margin: 32px 0;
 }
 
-.input-login label, .input-register label {
+.input-login label,
+.input-register label {
   font-size: 24px;
   font-weight: lighter;
 }
 
-.input-login input, .input-register input {
+.input-login input,
+.input-register input {
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 8px;
   margin-bottom: 16px;
   display: block;
@@ -315,11 +338,12 @@ main {
   background-color: transparent;
   border-radius: 8px;
   border: 3px solid var(--on-background);
-  color: var(--on-background)
+  color: var(--on-background);
 }
 
-.input-login button, .input-register button {
-  font-family: 'Inter', sans-serif;
+.input-login button,
+.input-register button {
+  font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 24px;
   width: 100%;
@@ -342,12 +366,64 @@ main {
   color: var(--on-background);
 }
 
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #ffcfb3;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  border: none;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.modal-actions button:hover {
+  background-color: red;
+  color: #fff;
+}
+
+.warning-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 650px) {
   .notes-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .detail-page__title { 
+  .detail-page__title {
     font-size: 64px;
   }
 }
