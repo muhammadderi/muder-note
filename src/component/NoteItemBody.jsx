@@ -2,6 +2,7 @@ import React from "react";
 import DeleteButton from "./DeleteButton";
 import ModalConfirmation from "./ModalConfirmation";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function NoteItemBody({ title, body, createdAt, id, onDelete }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,17 +19,22 @@ function NoteItemBody({ title, body, createdAt, id, onDelete }) {
       onDelete(selectedNoteId); // Call the parent onDelete function
     }
     setIsModalOpen(false); // Close the modal
+    alert('Catatan berhasil di delete :)');
   };
 
   // Close the modal without deleting
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <div className="note-item__body">
       <div className="note-item">
         <div className="note-mix">
-          <h3 className="note-item__title">{title}</h3>
+        <h3 >
+        <Link to={`/detail/${id}`} className="note-item__title">{title}</Link>
+        </h3>
+
           <DeleteButton id={id} onDelete={handleDeleteClick} />
         </div>
         <p className="note-item__body">{body}</p>

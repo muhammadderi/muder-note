@@ -112,8 +112,16 @@ main {
   color: #000;
 }
 
+
 .note-item__title {
   margin: 4px 0;
+  color: #000;
+  text-decoration: none;
+}
+
+.note-item__title:hover {
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .note-item__createdAt {

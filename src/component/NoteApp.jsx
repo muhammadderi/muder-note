@@ -6,6 +6,7 @@ import Navigation from './Navigation';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import AddPage from '../pages/AddPage';
+import NoteDetail from './NoteDetail';
 
 
 function NoteApp() {
@@ -19,6 +20,7 @@ function NoteApp() {
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/add' element={<AddPage />} />
+            <Route path="/detail/:id" element={<NoteDetail />} />
         </Routes>
         </main>
     </div>
